@@ -8,6 +8,17 @@ A mechanical conformance checker for Markdown documentation. It enforces the
 directory in a repo: YAML frontmatter shape, cross-document link integrity, heading-anchor
 correctness, tag-vocabulary closure, index completeness, and log ordering.
 
+## Architecture decisions
+
+Significant architectural decisions are recorded as lightweight ADRs in [`/adr/`](adr/), using
+the [MADR](https://adr.github.io/madr/) template — not `docs/`, so they stay outside the OKF
+profile this tool itself enforces. Each is numbered sequentially and never renumbered or
+rewritten in place; a superseded decision gets a new ADR, with the old one's status updated to
+point at it.
+
+To add one: scaffold with [adr-tools](https://github.com/npryce/adr-tools) pointed at `/adr/`
+and the MADR template, or copy the structure of the most recent file by hand.
+
 ## Development
 
 - Install stable Rust via [rustup](https://rustup.rs).
