@@ -156,6 +156,7 @@ and the MADR template, or copy the structure of the most recent file by hand.
 - Test: `cargo test`
 - Format: `cargo fmt`
 - Lint: `cargo clippy -- -D warnings`
+- Lint ADRs: `cargo install mdbook-lint && mdbook-lint lint adr/*.md`
 
 ## Contributing
 
