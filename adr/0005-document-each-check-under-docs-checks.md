@@ -1,8 +1,10 @@
-# Document each check under `docs/checks/` as a focused reference page
+---
+status: accepted
+date: 2026-09-12
+deciders: [ebh]
+---
 
-* Status: Accepted
-* Deciders: ebh
-* Date: 2026-09-12
+# Document each check under `docs/checks/` as a focused reference page
 
 ## Context and Problem Statement
 
