@@ -1,0 +1,115 @@
+# mdbook-lint configuration for adr/*.md.
+#
+# These files are a MADR-format decision log, not mdBook chapters, so the
+# generic standard-Markdown (MD*), CONTENT*, and MDBOOK* rules don't fit —
+# e.g. CONTENT004 fights MADR's fixed Title Case section headings, and
+# MD013's 80-column limit fights the ADRs' own wrapping style. Only the ADR*
+# rules (required sections, status/date validity, numbering, internal links)
+# should run.
+#
+# This is a denylist (every non-ADR rule as of mdbook-lint 0.16.1), not an
+# `enabled-rules` allowlist, on purpose: an allowlist silently drops a future
+# ADR018+ until someone adds it here, which is the failure we care about
+# avoiding. A denylist inverts that risk — a future non-ADR rule turns on
+# and adds noise until someone adds it below — which is the one we'd rather
+# have. CI pins the mdbook-lint version (and its release SHA256) in ci.yml,
+# so a version bump is already a deliberate, reviewed step; treat unexpected
+# new warnings after a bump as this list needing an addition, not as a
+# regression in the ADRs themselves.
+disabled-rules = [
+  # CONTENT* — prose/quality rules for mdBook chapters.
+  "CONTENT001",
+  "CONTENT002",
+  "CONTENT003",
+  "CONTENT004",
+  "CONTENT005",
+  "CONTENT006",
+  "CONTENT007",
+  "CONTENT009",
+  "CONTENT010",
+  "CONTENT011",
+
+  # MD* — standard Markdown style rules (markdownlint-derived).
+  "MD001",
+  "MD002",
+  "MD003",
+  "MD004",
+  "MD005",
+  "MD006",
+  "MD007",
+  "MD009",
+  "MD010",
+  "MD011",
+  "MD012",
+  "MD013",
+  "MD014",
+  "MD018",
+  "MD019",
+  "MD020",
+  "MD021",
+  "MD022",
+  "MD023",
+  "MD024",
+  "MD025",
+  "MD026",
+  "MD027",
+  "MD028",
+  "MD029",
+  "MD030",
+  "MD031",
+  "MD032",
+  "MD033",
+  "MD034",
+  "MD035",
+  "MD036",
+  "MD037",
+  "MD038",
+  "MD039",
+  "MD040",
+  "MD041",
+  "MD042",
+  "MD043",
+  "MD044",
+  "MD045",
+  "MD046",
+  "MD047",
+  "MD048",
+  "MD049",
+  "MD050",
+  "MD051",
+  "MD052",
+  "MD053",
+  "MD054",
+  "MD055",
+  "MD056",
+  "MD058",
+  "MD059",
+  "MD060",
+
+  # MDBOOK* — mdBook-project structure rules (SUMMARY.md, chapters, includes).
+  "MDBOOK001",
+  "MDBOOK002",
+  "MDBOOK003",
+  "MDBOOK004",
+  "MDBOOK005",
+  "MDBOOK006",
+  "MDBOOK007",
+  "MDBOOK008",
+  "MDBOOK009",
+  "MDBOOK010",
+  "MDBOOK011",
+  "MDBOOK012",
+  "MDBOOK016",
+  "MDBOOK017",
+  "MDBOOK021",
+  "MDBOOK022",
+  "MDBOOK023",
+  "MDBOOK025",
+]
+
+# Every ADR here already auto-detects as MADR (YAML frontmatter with
+# status/date), but pinning it explicitly documents that choice instead of
+# relying on inference, and makes ADR004/015/017 (MADR-specific structure)
+# apply unconditionally rather than only when detection guesses right.
+[ADR]
+format = "madr"
