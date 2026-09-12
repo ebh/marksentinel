@@ -12,6 +12,11 @@ It exists because these rules are invisible to a type checker, a general-purpose
 formatter — they're specific to how a repo's documentation is organized, and nothing else in
 the toolchain checks them.
 
+marksentinel deliberately does not check general Markdown formatting (bullet markers, table
+padding, heading style) — that's a formatter's job, not a documentation-profile checker's.
+Run a dedicated Markdown formatter such as [`oxfmt`](https://oxc.rs/docs/guide/usage/formatter.html)
+first; marksentinel checks the things a formatter can't.
+
 ## Getting started
 
 Install instructions are TBC until packaging/publishing is settled. For now, build from
@@ -113,30 +118,30 @@ attention, but never fails the run on its own).
 
 | Check | Severity | Rule | Implemented |
 |---|---|---|---|
-| `filename` | ERROR | Lower-kebab-case filename | ❌ |
-| `frontmatter-missing` | ERROR | Non-reserved document needs frontmatter | ❌ |
-| `frontmatter-parse` | ERROR | Frontmatter is well-formed YAML | ❌ |
-| `frontmatter-type` | ERROR | `type` is required and non-empty | ❌ |
-| `frontmatter-title` | WARN | `title` is recommended | ❌ |
-| `frontmatter-description` | WARN | `description` is recommended and a full sentence | ❌ |
-| `frontmatter-tags` | WARN/ERROR | `tags` is recommended and must be an array | ❌ |
-| `tags-one-line` | ERROR | `tags:` is a single-line flow array | ❌ |
-| `timestamp` | ERROR | `timestamp` is a real `YYYY-MM-DD` date | ❌ |
-| `frontmatter-reserved` | ERROR | Reserved files carry no frontmatter (except the canonical root index) | ❌ |
-| `link-relative` | ERROR | Internal links are absolute, repo-rooted paths | ❌ |
-| `link-dead` | ERROR (WARN in `log.md`) | Internal links resolve to a real file | ❌ |
-| `link-anchor` | ERROR | Anchored links resolve to a real heading | ❌ |
-| `h1-missing` | ERROR | Document has an H1 heading | ❌ |
-| `read-block-duplicate` | ERROR | At most one dependency block | ❌ |
-| `read-block-position` | ERROR | Dependency block comes first under the H1 | ❌ |
-| `read-first-repeated` | WARN | A stated hard prerequisite isn't also a later see-also | ❌ |
-| `log-heading` | ERROR | Every `log.md` `##` heading is a date | ❌ |
-| `log-order` | ERROR | `log.md` dates are descending | ❌ |
-| `index-missing-entry` | ERROR | Index links every document and child sub-bundle | ❌ |
-| `tag-vocabulary-missing` | WARN | Sub-bundle index declares a tag vocabulary | ❌ |
-| `tag-undeclared` | ERROR | A used tag is in the bundle's vocabulary | ❌ |
-| `tag-unused` | WARN | A declared tag is used by some document | ❌ |
-| `orphan` | WARN | Every document is reachable from within its bundle | ❌ |
+| [`filename`](docs/checks/filename.md) | ERROR | Lower-kebab-case filename | ❌ |
+| [`frontmatter-missing`](docs/checks/frontmatter-missing.md) | ERROR | Non-reserved document needs frontmatter | ❌ |
+| [`frontmatter-parse`](docs/checks/frontmatter-parse.md) | ERROR | Frontmatter is well-formed YAML | ❌ |
+| [`frontmatter-type`](docs/checks/frontmatter-type.md) | ERROR | `type` is required and non-empty | ❌ |
+| [`frontmatter-title`](docs/checks/frontmatter-title.md) | WARN | `title` is recommended | ❌ |
+| [`frontmatter-description`](docs/checks/frontmatter-description.md) | WARN | `description` is recommended and a full sentence | ❌ |
+| [`frontmatter-tags`](docs/checks/frontmatter-tags.md) | WARN/ERROR | `tags` is recommended and must be an array | ❌ |
+| [`tags-one-line`](docs/checks/tags-one-line.md) | ERROR | `tags:` is a single-line flow array | ❌ |
+| [`timestamp`](docs/checks/timestamp.md) | ERROR | `timestamp` is a real `YYYY-MM-DD` date | ❌ |
+| [`frontmatter-reserved`](docs/checks/frontmatter-reserved.md) | ERROR | Reserved files carry no frontmatter (except the canonical root index) | ❌ |
+| [`link-relative`](docs/checks/link-relative.md) | ERROR | Internal links are absolute, repo-rooted paths | ❌ |
+| [`link-dead`](docs/checks/link-dead.md) | ERROR (WARN in `log.md`) | Internal links resolve to a real file | ❌ |
+| [`link-anchor`](docs/checks/link-anchor.md) | ERROR | Anchored links resolve to a real heading | ❌ |
+| [`h1-missing`](docs/checks/h1-missing.md) | ERROR | Document has an H1 heading | ❌ |
+| [`read-block-duplicate`](docs/checks/read-block-duplicate.md) | ERROR | At most one dependency block | ❌ |
+| [`read-block-position`](docs/checks/read-block-position.md) | ERROR | Dependency block comes first under the H1 | ❌ |
+| [`read-first-repeated`](docs/checks/read-first-repeated.md) | WARN | A stated hard prerequisite isn't also a later see-also | ❌ |
+| [`log-heading`](docs/checks/log-heading.md) | ERROR | Every `log.md` `##` heading is a date | ❌ |
+| [`log-order`](docs/checks/log-order.md) | ERROR | `log.md` dates are descending | ❌ |
+| [`index-missing-entry`](docs/checks/index-missing-entry.md) | ERROR | Index links every document and child sub-bundle | ❌ |
+| [`tag-vocabulary-missing`](docs/checks/tag-vocabulary-missing.md) | WARN | Sub-bundle index declares a tag vocabulary | ❌ |
+| [`tag-undeclared`](docs/checks/tag-undeclared.md) | ERROR | A used tag is in the bundle's vocabulary | ❌ |
+| [`tag-unused`](docs/checks/tag-unused.md) | WARN | A declared tag is used by some document | ❌ |
+| [`orphan`](docs/checks/orphan.md) | WARN | Every document is reachable from within its bundle | ❌ |
 
 ## Architecture decisions
 
