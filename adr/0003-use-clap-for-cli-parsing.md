@@ -1,8 +1,12 @@
+---
+status: accepted
+date: 2026-09-12
+deciders: [ebh]
+---
+
 # Use clap for CLI parsing
 
-* Status: Accepted (recorded retroactively — see [ADR 0001](0001-record-architecture-decisions-with-madr.md))
-* Deciders: ebh
-* Date: 2026-09-12
+*Recorded retroactively — see [ADR 0001](0001-record-architecture-decisions-with-madr.md).*
 
 ## Context and Problem Statement
 

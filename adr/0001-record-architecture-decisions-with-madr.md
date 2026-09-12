@@ -1,8 +1,10 @@
-# Record architecture decisions with MADR
+---
+status: accepted
+date: 2026-09-12
+deciders: [ebh]
+---
 
-* Status: Accepted
-* Deciders: ebh
-* Date: 2026-09-12
+# Record architecture decisions with MADR
 
 ## Context and Problem Statement
 

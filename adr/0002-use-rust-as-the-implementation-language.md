@@ -1,9 +1,13 @@
+---
+status: accepted
+date: 2026-09-12
+deciders: [ebh]
+---
+
 # Use Rust as the implementation language
 
-* Status: Accepted (recorded retroactively — this decision predates the project's adoption of
-  ADRs; see [ADR 0001](0001-record-architecture-decisions-with-madr.md))
-* Deciders: ebh
-* Date: 2026-09-12
+*Recorded retroactively — this decision predates the project's adoption of ADRs; see
+[ADR 0001](0001-record-architecture-decisions-with-madr.md).*
 
 ## Context and Problem Statement
 
