@@ -1,0 +1,14 @@
+# Normalize line endings to LF in the repo; let Git convert on checkout
+# per the platform default so Windows contributors still get CRLF locally.
+* text=auto eol=lf
+
+# Windows-only scripts must keep CRLF even on other platforms.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files — never touch line endings, never diff as text.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
