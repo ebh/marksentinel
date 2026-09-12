@@ -1,0 +1,4 @@
+# Pin formatting to the crate's edition so `cargo fmt` and the compiler agree
+# on syntax (e.g. edition 2024 changes). Keeping this file even at defaults
+# stops formatting from silently drifting as rustfmt adds new stable options.
+edition = "2024"
