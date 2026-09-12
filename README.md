@@ -1,5 +1,7 @@
 # marksentinel
 
+[![CI](https://github.com/ebh/marksentinel/actions/workflows/ci.yml/badge.svg)](https://github.com/ebh/marksentinel/actions/workflows/ci.yml)
+
 A mechanical conformance checker for Markdown documentation. It enforces the
 [OKF (Open Knowledge Format)](https://okf.md/) documentation profile against any `docs/`
 directory in a repo: YAML frontmatter shape, cross-document link integrity, heading-anchor
