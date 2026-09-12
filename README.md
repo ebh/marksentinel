@@ -157,11 +157,12 @@ and the MADR template, or copy the structure of the most recent file by hand.
 ## Development
 
 - Install stable Rust via [rustup](https://rustup.rs).
+- Install [mdbook-lint](https://github.com/joshrotenberg/mdbook-lint): `cargo install mdbook-lint`
 - Build: `cargo build`
 - Test: `cargo test`
 - Format: `cargo fmt`
 - Lint: `cargo clippy -- -D warnings`
-- Lint ADRs: `cargo install mdbook-lint && mdbook-lint lint adr/*.md`
+- Lint ADRs: `mdbook-lint lint adr/*.md`
 
 ## Contributing
 
